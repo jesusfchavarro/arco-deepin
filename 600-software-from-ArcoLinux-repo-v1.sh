@@ -21,7 +21,7 @@ echo
 #sudo pacman -S arcolinux-applications-git --noconfirm --needed
 #sudo pacman -S arcolinux-arc-themes-git --noconfirm --needed
 #sudo pacman -S arcolinux-awesome-git --noconfirm --needed
-sudo pacman -S arcolinux-bin-git --noconfirm --needed
+#sudo pacman -S arcolinux-bin-git --noconfirm --needed
 #sudo pacman -S arcolinux-bspwm-git --noconfirm --needed
 #sudo pacman -S arcolinux-common-git --noconfirm --needed
 #sudo pacman -S arcolinux-config-cinnamon-git --noconfirm --needed
@@ -83,8 +83,8 @@ echo "####     Software from ArcoLinux 3party Repository           ####"
 echo "################################################################"
 echo "Retry if it times out - large files to download"
 
-sudo pacman -S --noconfirm --needed discord
-sudo pacman -S --noconfirm --needed dropbox
+#sudo pacman -S --noconfirm --needed discord
+#sudo pacman -S --noconfirm --needed dropbox
 #sudo pacman -S --noconfirm --needed insync
 sudo pacman -S --noconfirm --needed spotify
 
