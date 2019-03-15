@@ -6,6 +6,8 @@ set -e
 # Website	:	https://www.arcolinux.info
 # Website	:	https://www.arcolinux.com
 # Website	:	https://www.arcolinuxd.com
+# Website	:	https://www.arcolinuxb.com
+# Website	:	https://www.arcolinuxiso.com
 # Website	:	https://www.arcolinuxforum.com
 ##################################################################################################################
 #
@@ -13,16 +15,12 @@ set -e
 #
 ##################################################################################################################
 
-echo "Network Discovery"
+echo "Receiving, local signing and refreshing keys"
 
-sudo pacman -S --noconfirm --needed avahi
-sudo systemctl enable avahi-daemon.service
-sudo systemctl start avahi-daemon.service
-
-#shares on a mac
-sudo pacman -S --noconfirm --needed nss-mdns
-sudo sed -i 's/dns/mdns dns wins/g' /etc/nsswitch.conf
+sudo pacman-key -r 74F5DE85A506BF64
+sudo pacman-key --lsign-key 74F5DE85A506BF64
+sudo pacman-key --refresh-keys
 
 echo "################################################################"
-echo "####       network discovery  software installed        ########"
+echo "###                   key trusted                           ####"
 echo "################################################################"

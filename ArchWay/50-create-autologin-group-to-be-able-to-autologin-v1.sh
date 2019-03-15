@@ -1,5 +1,5 @@
 #!/bin/bash
-#set -e
+set -e
 ##################################################################################################################
 # Author	:	Erik Dubois
 # Website	:	https://www.erikdubois.be
@@ -15,29 +15,12 @@
 #
 ##################################################################################################################
 
-# checking if I have the latest files from github
-echo "Checking for newer files online first"
-git pull
+echo "Autologin system group is installed on ArcoLinux"
+echo "On Arch Linux we need to create it ourselves"
 
-# Below command will backup everything inside the project folder
-git add --all .
-
-# Give a comment to the commit if you want
-echo "####################################"
-echo "Write your commit comment!"
-echo "####################################"
-
-read input
-
-# Committing to the local repository with a message containing the time details and commit text
-
-git commit -m "$input"
-
-# Push the local files to github
-
-git push -u origin master
-
+sudo groupadd -r autologin
 
 echo "################################################################"
-echo "###################    Git Push Done      ######################"
+echo "###                  Group has been created                 ####"
+echo "###        Now you can run script 800 to autologin          ####"
 echo "################################################################"

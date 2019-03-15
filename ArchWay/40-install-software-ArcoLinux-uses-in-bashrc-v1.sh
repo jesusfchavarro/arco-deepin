@@ -6,6 +6,8 @@ set -e
 # Website	:	https://www.arcolinux.info
 # Website	:	https://www.arcolinux.com
 # Website	:	https://www.arcolinuxd.com
+# Website	:	https://www.arcolinuxb.com
+# Website	:	https://www.arcolinuxiso.com
 # Website	:	https://www.arcolinuxforum.com
 ##################################################################################################################
 #
@@ -13,10 +15,14 @@ set -e
 #
 ##################################################################################################################
 
-sudo pacman-key --keyserver hkp://pool.sks-keyservers.net:80 -r 74F5DE85A506BF64
-#sudo pacman-key --keyserver hkps://hkps.pool.sks-keyservers.net:443 -r 74F5DE85A506BF64
-sudo pacman-key --lsign-key 74F5DE85A506BF64
+echo "Installing the software ArcoLinux uses in .bashrc"
+
+sudo pacman -S --noconfirm --needed expac
+sudo pacman -S --noconfirm --needed hwinfo
+sudo pacman -S --noconfirm --needed reflector
+sudo pacman -S --noconfirm --needed youtube-dl
+
 
 echo "################################################################"
-echo "###                   key trusted                           ####"
+echo "###                  software installed                     ####"
 echo "################################################################"

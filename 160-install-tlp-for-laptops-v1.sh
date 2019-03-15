@@ -1,5 +1,5 @@
 #!/bin/bash
-#set -e
+set -e
 ##################################################################################################################
 # Author	:	Erik Dubois
 # Website	:	https://www.erikdubois.be
@@ -15,29 +15,19 @@
 #
 ##################################################################################################################
 
-# checking if I have the latest files from github
-echo "Checking for newer files online first"
-git pull
+# https://wiki.archlinux.org/index.php/TLP
+#TLP brings you the benefits of advanced power management for Linux without
+#the need to understand every technical detail. TLP comes with a default
+#configuration already optimized for battery life, so you may just install
+# and forget it. Nevertheless TLP is highly customizable to fulfill your
+# specific requirements
 
-# Below command will backup everything inside the project folder
-git add --all .
+echo "Install tlp for battery life - laptops"
 
-# Give a comment to the commit if you want
-echo "####################################"
-echo "Write your commit comment!"
-echo "####################################"
-
-read input
-
-# Committing to the local repository with a message containing the time details and commit text
-
-git commit -m "$input"
-
-# Push the local files to github
-
-git push -u origin master
-
+sudo pacman -S --noconfirm --needed tlp
+sudo systemctl enable tlp.service
+sudo systemctl start tlp-sleep.service
 
 echo "################################################################"
-echo "###################    Git Push Done      ######################"
+echo "####               tlp  software installed              ########"
 echo "################################################################"

@@ -1,5 +1,5 @@
 #!/bin/bash
-#set -e
+set -e
 ##################################################################################################################
 # Author	:	Erik Dubois
 # Website	:	https://www.erikdubois.be
@@ -15,29 +15,28 @@
 #
 ##################################################################################################################
 
-# checking if I have the latest files from github
-echo "Checking for newer files online first"
-git pull
+echo "Network Discovery"
 
-# Below command will backup everything inside the project folder
-git add --all .
+sudo pacman -S --noconfirm --needed avahi
+sudo systemctl enable avahi-daemon.service
+sudo systemctl start avahi-daemon.service
 
-# Give a comment to the commit if you want
-echo "####################################"
-echo "Write your commit comment!"
-echo "####################################"
+#shares on a mac
+sudo pacman -S --noconfirm --needed nss-mdns
 
-read input
+#shares on a linux
+sudo pacman -S --noconfirm --needed gvfs-smb
 
-# Committing to the local repository with a message containing the time details and commit text
+#change nsswitch.conf for access to nas servers
+#original line comes from the package filesystem
+#hosts: files mymachines myhostname resolve [!UNAVAIL=return] dns
+#ArcoLinux line
+#hosts: files mymachines resolve [!UNAVAIL=return] mdns dns wins myhostname
 
-git commit -m "$input"
-
-# Push the local files to github
-
-git push -u origin master
-
-
+#first part
+sudo sed -i 's/files mymachines myhostname/files mymachines/g' /etc/nsswitch.conf
+#last part
+sudo sed -i 's/\[\!UNAVAIL=return\] dns/\[\!UNAVAIL=return\] mdns dns wins myhostname/g' /etc/nsswitch.conf
 echo "################################################################"
-echo "###################    Git Push Done      ######################"
+echo "####       network discovery  software installed        ########"
 echo "################################################################"

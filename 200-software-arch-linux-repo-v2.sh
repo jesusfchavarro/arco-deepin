@@ -6,6 +6,8 @@ set -e
 # Website	:	https://www.arcolinux.info
 # Website	:	https://www.arcolinux.com
 # Website	:	https://www.arcolinuxd.com
+# Website	:	https://www.arcolinuxb.com
+# Website	:	https://www.arcolinuxiso.com
 # Website	:	https://www.arcolinuxforum.com
 ##################################################################################################################
 #
@@ -24,13 +26,14 @@ sudo pacman -S --noconfirm --needed cmatrix
 #sudo pacman -S --noconfirm --needed plank
 #sudo pacman -S --noconfirm --needed redshift
 #sudo pacman -S --noconfirm --needed xfburn
-sudo pacman -S --noconfirm --needed variety
+# sudo pacman -S --noconfirm --needed variety
 #sudo pacman -S --noconfirm --needed
 
 
 echo "Installing category Development"
 
 sudo pacman -S --noconfirm --needed code
+#sudo pacman -S --noconfirm --needed atom
 #sudo pacman -S --noconfirm --needed geany
 #sudo pacman -S --noconfirm --needed meld
 #sudo pacman -S --noconfirm --needed
@@ -49,7 +52,8 @@ echo "Installing category Graphics"
 #sudo pacman -S --noconfirm --needed gimp
 #sudo pacman -S --noconfirm --needed gnome-font-viewer
 #sudo pacman -S --noconfirm --needed gpick
-#sudo pacman -S --noconfirm --needed inkscape
+# sudo pacman -S --noconfirm --needed inkscape
+# sudo pacman -S --noconfirm --needed nomacs
 #sudo pacman -S --noconfirm --needed pinta
 #sudo pacman -S --noconfirm --needed ristretto
 #sudo pacman -S --noconfirm --needed
@@ -60,8 +64,7 @@ echo "Installing category Internet"
 #sudo pacman -S --noconfirm --needed filezilla
 sudo pacman -S --noconfirm --needed firefox-developer-edition
 #sudo pacman -S --noconfirm --needed hexchat
-#sudo pacman -S --noconfirm --needed transmission-cli
-#sudo pacman -S --noconfirm --needed transmission-qt
+# sudo pacman -S --noconfirm --needed qbittorrent
 #sudo pacman -S --noconfirm --needed
 
 echo "Installing category Multimedia"
@@ -71,7 +74,7 @@ echo "Installing category Multimedia"
 #sudo pacman -S --noconfirm --needed mpv
 #sudo pacman -S --noconfirm --needed openshot
 #sudo pacman -S --noconfirm --needed pragha
-sudo pacman -S --noconfirm --needed shotwell
+# sudo pacman -S --noconfirm --needed shotwell
 #sudo pacman -S --noconfirm --needed simplescreenrecorder
 #sudo pacman -S --noconfirm --needed smplayer
 #sudo pacman -S --noconfirm --needed vlc
@@ -107,25 +110,28 @@ sudo pacman -S --noconfirm --needed git
 #sudo pacman -S --noconfirm --needed gnome-terminal
 #sudo pacman -S --noconfirm --needed gnome-tweak-tool
 sudo pacman -S --noconfirm --needed gparted
-#sudo pacman -S --noconfirm --needed grsync
-#sudo pacman -S --noconfirm --needed gtk-engine-murrine
-#sudo pacman -S --noconfirm --needed gvfs gvfs-mtp
-#sudo pacman -S --noconfirm --needed hardinfo
-#sudo pacman -S --noconfirm --needed hddtemp
-#sudo pacman -S --noconfirm --needed htop
+# sudo pacman -S --noconfirm --needed grsync
+# sudo pacman -S --noconfirm --needed gtk-engine-murrine
+# sudo pacman -S --noconfirm --needed gvfs gvfs-mtp
+# sudo pacman -S --noconfirm --needed hardinfo
+# sudo pacman -S --noconfirm --needed hddtemp
+# sudo pacman -S --noconfirm --needed htop
+# sudo pacman -S --noconfirm --needed kvantum-qt5
+# sudo pacman -S --noconfirm --needed kvantum-theme-arc
 # sudo pacman -S --noconfirm --needed lm_sensors
 # sudo pacman -S --noconfirm --needed lsb-release
-#sudo pacman -S --noconfirm --needed mlocate
+# sudo pacman -S --noconfirm --needed mlocate
 # sudo pacman -S --noconfirm --needed net-tools
 #sudo pacman -S --noconfirm --needed notify-osd
 # sudo pacman -S --noconfirm --needed noto-fonts
 sudo pacman -S --noconfirm --needed numlockx
 #sudo pacman -S --noconfirm --needed polkit-gnome
-#sudo pacman -S --noconfirm --needed sane
-#sudo pacman -S --noconfirm --needed screenfetch
-#sudo pacman -S --noconfirm --needed scrot
-#sudo pacman -S --noconfirm --needed simple-scan
-#sudo pacman -S --noconfirm --needed sysstat
+# sudo pacman -S --noconfirm --needed qt5ct
+# sudo pacman -S --noconfirm --needed sane
+# sudo pacman -S --noconfirm --needed screenfetch
+# sudo pacman -S --noconfirm --needed scrot
+# sudo pacman -S --noconfirm --needed simple-scan
+# sudo pacman -S --noconfirm --needed sysstat
 #sudo pacman -S --noconfirm --needed terminator
 #sudo pacman -S --noconfirm --needed termite
 #sudo pacman -S --noconfirm --needed thunar
@@ -148,7 +154,7 @@ sudo pacman -S --noconfirm --needed xdg-user-dirs
 ###############################################################################################
 
 # installation of zippers and unzippers
-sudo pacman -S --noconfirm --needed unace unrar zip unzip sharutils  uudeview  arj cabextract
+sudo pacman -S --noconfirm --needed unrar zip unzip
 
 ###############################################################################################
 

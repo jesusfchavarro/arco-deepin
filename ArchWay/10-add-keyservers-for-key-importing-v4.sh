@@ -1,5 +1,5 @@
 #!/bin/bash
-#set -e
+set -e
 ##################################################################################################################
 # Author	:	Erik Dubois
 # Website	:	https://www.erikdubois.be
@@ -14,30 +14,26 @@
 #   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
 #
 ##################################################################################################################
+[ -d $HOME"/.gnupg" ] || mkdir -p $HOME"/.gnupg"
 
-# checking if I have the latest files from github
-echo "Checking for newer files online first"
-git pull
+echo "Adding keyservers to your personal .gpg for future applications"
+echo "that require keys to be imported with yay for example"
 
-# Below command will backup everything inside the project folder
-git add --all .
+echo '
+keyserver hkp://pool.sks-keyservers.net:80
+keyserver hkps://hkps.pool.sks-keyservers.net:443
+keyserver hkp://ipv4.pool.sks-keyservers.net:11371' | tee --append ~/.gnupg/gpg.conf
 
-# Give a comment to the commit if you want
-echo "####################################"
-echo "Write your commit comment!"
-echo "####################################"
+chmod 600 ~/.gnupg/gpg.conf
+chmod 700 ~/.gnupg
 
-read input
+echo "Adding keyservers to the /etc/pacman.d/gnupg folder for the use with pacman"
 
-# Committing to the local repository with a message containing the time details and commit text
-
-git commit -m "$input"
-
-# Push the local files to github
-
-git push -u origin master
-
+echo '
+keyserver hkp://pool.sks-keyservers.net:80
+keyserver hkps://hkps.pool.sks-keyservers.net:443
+keyserver hkp://ipv4.pool.sks-keyservers.net:11371' | sudo tee --append /etc/pacman.d/gnupg/gpg.conf
 
 echo "################################################################"
-echo "###################    Git Push Done      ######################"
+echo "###                  keyservers added                       ####"
 echo "################################################################"
