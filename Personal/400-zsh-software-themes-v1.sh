@@ -15,7 +15,7 @@
 
 echo "Installing all needed software for zsh use and theming"
 
-sh ../AUR/install-zsh-v*.sh
+#sh ../AUR/install-zsh-v*.sh
 
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
